@@ -36,6 +36,11 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libffi-dev libssl-dev
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -49,6 +54,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install flet-cli==${{env.FLET_CLI_VERSION}}
+          pip list
 
       - name: Flet Build APK
         run: |
