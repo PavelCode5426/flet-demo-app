@@ -1,0 +1,31 @@
+[project]
+name = "Restaurant"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "PavelCode5426", email = "perezpavel5426@gmial.com" }
+]
+dependencies = [
+    "flet",
+    "flet_route==0.3.3",
+    "tortoise-orm==0.21.3",
+]
+
+[tool.flet]
+org = "com.mycompany" # --org
+product = "Product name" # --product
+company = "My Company" # --company
+copyright = "Copyright (C) 2024 by MyCompany" # --copyright
+build_number = 1 # --build-number
+
+[tool.flet.app]
+module = "main"
+path = "src"
+exclude = ["assets"]
+
+[tool.flet.compile]
+app = false
+packages = false
+cleanup = false
