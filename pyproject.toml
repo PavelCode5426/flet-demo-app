@@ -15,19 +15,18 @@ dependencies = [
 ]
 
 
+[tool.flet]
+org = "com.pavelcode5426" # --org
+product = "Restaurant" # --product
+company = "PavelCode5426" # --company
+copyright = "Copyright (C) 2024 by MyCompany" # --copyright
+build_number = 4 # --build-number
 dependencies = [
     "flet",
     "flet_route",
     "tortoise",
     "tortoise-orm",
 ]
-
-[tool.flet]
-org = "com.pavelcode5426" # --org
-product = "Restaurant App" # --product
-company = "PavelCode5426" # --company
-copyright = "Copyright (C) 2024 by MyCompany" # --copyright
-build_number = 4 # --build-number
 
 [tool.flet.app]
 exclude = ["assets"]
