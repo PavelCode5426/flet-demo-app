@@ -4,9 +4,6 @@ version = "0.1.0"
 description = ""
 readme = "README.md"
 requires-python = ">=3.9"
-authors = [
-    { name = "PavelCode5426", email = "perezpavel5426@gmial.com" }
-]
 dependencies = [
     "flet",
     "flet_route",
