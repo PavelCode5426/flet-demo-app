@@ -7,11 +7,11 @@ requires-python = ">=3.9"
 authors = [
     { name = "PavelCode5426", email = "perezpavel5426@gmial.com" }
 ]
-dependencies = [
-    "flet",
-    "flet_route",
-    "peewee"
-]
+#dependencies = [
+#    "flet",
+#    "flet_route",
+#    "peewee"
+#]
 
 
 [tool.flet]
@@ -20,11 +20,11 @@ product = "Restaurant" # --product
 company = "PavelCode5426" # --company
 copyright = "Copyright (C) 2024 by MyCompany" # --copyright
 build_number = 4 # --build-number
-dependencies = [
-    "flet",
-    "flet_route",
-    "peewee"
-]
+#dependencies = [
+#    "flet",
+#    "flet_route",
+#    "peewee"
+#]
 
 [tool.flet.app]
 exclude = ["assets"]
