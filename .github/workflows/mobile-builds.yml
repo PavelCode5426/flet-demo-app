@@ -17,7 +17,7 @@ on:
 
 env:
   # Python version to use
-  PYTHON_VERSION: 3.10
+  PYTHON_VERSION: 3.10.0
 
   # flet-cli version to install for `flet build`
   FLET_CLI_VERSION: 0.27.5
