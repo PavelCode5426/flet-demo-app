@@ -2,7 +2,7 @@ import asyncio
 
 import flet as ft
 
-import core as core
+import core
 
 
 class NavigationBar(ft.NavigationBar):
@@ -87,7 +87,8 @@ class ReportsContainer(IndexContainer):
         self.content.controls.append(self.content_form)
 
     def render_reports(self):
-        sells_info = asyncio.run(core.Reports().get_day_info())
+        # sells_info = asyncio.run(core.Reports().get_day_info())
+        sells_info = dict()
 
         self.content_row.clean()
         grid_controls = self.content_row.controls

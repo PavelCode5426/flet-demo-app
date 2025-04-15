@@ -7,7 +7,7 @@ requires-python = ">=3.9"
 dependencies = [
     "flet",
     "flet_route",
-    "peewee"
+    "sqlalchemy"
 ]
 
 
@@ -20,7 +20,7 @@ build_number = 4 # --build-number
 dependencies = [
     "flet",
     "flet_route",
-    "peewee"
+    "sqlalchemy"
 ]
 
 [tool.flet.app]

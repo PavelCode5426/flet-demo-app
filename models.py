@@ -1,35 +1,39 @@
 from datetime import datetime
 
-from peewee import *
+from sqlalchemy import create_engine, Column, Integer, Float, Boolean, Text, SmallInteger, Date
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-db = SqliteDatabase('restaurant.db')
-
-
-class ComonModel(Model):
-    id = IntegerField(primary_key=True)
-    description = TextField(default="")
-    total = FloatField()
-    closed = BooleanField(default=False)
-
-    class Meta:
-        abstract = True
-        database = db
+# Configuración de la base de datos
+DATABASE_URL = "sqlite:///restaurant.db"
+engine = create_engine(DATABASE_URL)
+Base = declarative_base()
+Session = sessionmaker(bind=engine)
 
 
-class Orden(ComonModel):
-    number = SmallIntegerField()
-    discount = FloatField(default=0)
-    result = FloatField()
-    transference = BooleanField(default=False)
-    comission = BooleanField(default=False)
-    debt = BooleanField(default=False)
-    date = DateField(default=datetime.now)
+class CommonModel(Base):
+    __abstract__ = True
+    id = Column(Integer, primary_key=True)
+    description = Column(Text, default="")
+    total = Column(Float)
+    closed = Column(Boolean, default=False)
 
 
-class Bill(ComonModel):
-    title = TextField()
+class Orden(CommonModel):
+    __tablename__ = 'orden'
+    number = Column(SmallInteger)
+    discount = Column(Float, default=0)
+    result = Column(Float)
+    transference = Column(Boolean, default=False)
+    comission = Column(Boolean, default=False)
+    debt = Column(Boolean, default=False)
+    date = Column(Date, default=datetime.now)
+
+
+class Bill(CommonModel):
+    __tablename__ = 'bill'
+    title = Column(Text)
 
 
 def create_tables():
-    with db:
-        db.create_tables([Orden, Bill])
+    Base.metadata.create_all(engine)
