@@ -10,8 +10,7 @@ authors = [
 dependencies = [
     "flet",
     "flet_route",
-    "tortoise",
-    "tortoise-orm",
+    "peewee"
 ]
 
 
@@ -24,8 +23,7 @@ build_number = 4 # --build-number
 dependencies = [
     "flet",
     "flet_route",
-    "tortoise",
-    "tortoise-orm",
+    "peewee"
 ]
 
 [tool.flet.app]

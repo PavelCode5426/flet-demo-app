@@ -1,17 +1,16 @@
+import asyncio
+import os.path
+
 import flet as ft
-from tortoise import Tortoise, run_async
 
 import urls as urls
+from models import create_tables
 from routing import Routing
 
 
 async def init():
-    await Tortoise.init(
-        db_url='sqlite://db.sqlite3',
-        _create_db=True,
-        modules={'models': ['models']}
-    )
-    await Tortoise.generate_schemas()
+    if os.path.isfile('restaurant.db'):
+        create_tables()
 
 
 def main(page: ft.Page):
@@ -19,5 +18,5 @@ def main(page: ft.Page):
     page.go(page.route)
 
 
-run_async(init())
+asyncio.run(init())
 ft.app(target=main)

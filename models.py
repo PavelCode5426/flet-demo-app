@@ -1,27 +1,35 @@
-from tortoise import fields
-from tortoise.models import Model
-from tortoise.timezone import now
+from datetime import datetime
+
+from peewee import *
+
+db = SqliteDatabase('restaurant.db')
 
 
 class ComonModel(Model):
-    id = fields.IntField(primary_key=True)
-    description = fields.TextField(default="")
-    total = fields.FloatField()
-    closed = fields.BooleanField(default=False)
+    id = IntegerField(primary_key=True)
+    description = TextField(default="")
+    total = FloatField()
+    closed = BooleanField(default=False)
 
     class Meta:
         abstract = True
+        database = db
 
 
 class Orden(ComonModel):
-    number = fields.SmallIntField()
-    discount = fields.FloatField(default=0)
-    result = fields.FloatField()
-    transference = fields.BooleanField(default=False)
-    comission = fields.BooleanField(default=False)
-    debt = fields.BooleanField(default=False)
-    date = fields.DateField(default=now)
+    number = SmallIntegerField()
+    discount = FloatField(default=0)
+    result = FloatField()
+    transference = BooleanField(default=False)
+    comission = BooleanField(default=False)
+    debt = BooleanField(default=False)
+    date = DateField(default=datetime.now)
 
 
 class Bill(ComonModel):
-    title = fields.TextField()
+    title = TextField()
+
+
+def create_tables():
+    with db:
+        db.create_tables([Orden, Bill])

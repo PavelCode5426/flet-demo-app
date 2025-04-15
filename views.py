@@ -8,7 +8,7 @@ class IndexPage(ft.View):
 
     def __init__(self):
         super(IndexPage, self).__init__()
-        self.container = ft.SafeArea()
+        self.container = ft.SafeArea(ft.Container())
         self.navigation_bar = controls.NavigationBar()
         self.navigation_bar.on_change = self.on_change_navigation
         self.controls = [self.container]

@@ -8,9 +8,9 @@ import core as core
 class NavigationBar(ft.NavigationBar):
     def __init__(self):
         super(NavigationBar, self).__init__(bgcolor=ft.colors.LIGHT_BLUE_ACCENT_400, destinations=[
-            ft.NavigationDestination(icon=ft.icons.REPORT, label="Reporte"),
-            ft.NavigationDestination(icon=ft.icons.PAYMENT, label="Ordenes"),
-            ft.NavigationDestination(icon=ft.icons.NO_TRANSFER, label="Gastos"),
+            ft.NavigationBarDestination(icon=ft.icons.REPORT, label="Reporte"),
+            ft.NavigationBarDestination(icon=ft.icons.PAYMENT, label="Ordenes"),
+            ft.NavigationBarDestination(icon=ft.icons.NO_TRANSFER, label="Gastos"),
         ], selected_index=0)
         self.indicator_color = ft.colors.WHITE
 
@@ -57,7 +57,7 @@ class CalculateSalaryForm(ft.Column):
 
     def update_data(self, percent):
         self.data = percent
-        self.calculate_salaries()
+        # self.calculate_salaries()
 
 
 class ReportContainer(ft.Container):
@@ -91,12 +91,12 @@ class ReportsContainer(IndexContainer):
 
         self.content_row.clean()
         grid_controls = self.content_row.controls
-        grid_controls.append(ReportContainer("Ventas Totales:", round(sells_info.get('sells'), 2)))
-        grid_controls.append(ReportContainer("Porciento:", round(sells_info.get('percent'), 2)))
-        grid_controls.append(ReportContainer("Comisiones:", round(sells_info.get('comissions'), 2)))
-        grid_controls.append(ReportContainer("Transferencias:", round(sells_info.get('transferences'), 2)))
-        grid_controls.append(ReportContainer("Gastos:", round(sells_info.get('bills'), 2)))
-        grid_controls.append(ReportContainer("Efectivo:", round(sells_info.get('efective'), 2)))
+        grid_controls.append(ReportContainer("Ventas Totales:", round(sells_info.get('sells', 0), 2)))
+        grid_controls.append(ReportContainer("Porciento:", round(sells_info.get('percent', 0), 2)))
+        grid_controls.append(ReportContainer("Comisiones:", round(sells_info.get('comissions', 0), 2)))
+        grid_controls.append(ReportContainer("Transferencias:", round(sells_info.get('transferences', 0), 2)))
+        grid_controls.append(ReportContainer("Gastos:", round(sells_info.get('bills', 0), 2)))
+        grid_controls.append(ReportContainer("Efectivo:", round(sells_info.get('efective', 0), 2)))
 
         self.content_form.update_data(sells_info.get('percent'))
 
