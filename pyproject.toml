@@ -21,8 +21,6 @@ copyright = "Copyright (C) 2024 by MyCompany" # --copyright
 build_number = 1 # --build-number
 
 [tool.flet.app]
-module = "main"
-path = "src"
 exclude = ["assets"]
 
 [tool.flet.compile]

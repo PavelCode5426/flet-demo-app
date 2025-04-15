@@ -1,6 +1,6 @@
 import flet as ft
 
-import src.controls as controls
+import controls as controls
 
 
 class IndexPage(ft.View):

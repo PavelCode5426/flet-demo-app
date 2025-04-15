@@ -1,6 +1,6 @@
 import tortoise.functions
 
-import src.models as models
+import models as models
 
 worker_salary = 0
 casher_salary = 200
