@@ -34,7 +34,6 @@ env:
 jobs:
   build-apk:
     runs-on: ubuntu-22.04
-
     steps:
       - name: Install System Dependencies
         run: |

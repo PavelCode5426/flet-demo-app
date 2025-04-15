@@ -9,21 +9,22 @@ authors = [
 ]
 dependencies = [
     "flet",
-    "flet_route==0.3.3",
-    "tortoise-orm==0.21.3",
+    "flet_route",
+    "tortoise",
+    "tortoise-orm",
 ]
 
 [tool.flet]
-org = "com.mycompany" # --org
-product = "Product name" # --product
-company = "My Company" # --company
+org = "com.pavelcode5426" # --org
+product = "Restaurant App" # --product
+company = "PavelCode5426" # --company
 copyright = "Copyright (C) 2024 by MyCompany" # --copyright
-build_number = 1 # --build-number
+build_number = 4 # --build-number
 
 [tool.flet.app]
 exclude = ["assets"]
 
 [tool.flet.compile]
-app = false
-packages = false
-cleanup = false
+app = true
+packages = true
+cleanup = true
