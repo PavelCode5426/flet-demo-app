@@ -3,8 +3,8 @@ import asyncio
 import flet as ft
 from flet_route import Params, Basket
 
-import core
-import views
+import src.core as core
+import src.views as views
 
 
 def index_page(page: ft.Page, params: Params, basket: Basket):

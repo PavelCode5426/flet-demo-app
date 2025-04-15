@@ -2,7 +2,7 @@ import asyncio
 
 import flet as ft
 
-import core
+import src.core as core
 
 
 class NavigationBar(ft.NavigationBar):

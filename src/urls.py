@@ -1,6 +1,6 @@
 from flet_route import path
 
-import pages
+import src.pages as pages
 
 app_routes_with_navigation = [
     path(url="/", clear=True, view=pages.index_page),
