@@ -7,6 +7,8 @@ requires-python = ">=3.9"
 authors = [
     { name = "PavelCode5426", email = "perezpavel5426@gmial.com" }
 ]
+
+[tool.poetry]
 dependencies = [
     "flet",
     "flet_route",
