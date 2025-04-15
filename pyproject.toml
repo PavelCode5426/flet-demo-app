@@ -8,17 +8,17 @@ authors = [
     { name = "PavelCode5426", email = "perezpavel5426@gmial.com" }
 ]
 dependencies = [
-    "flet",
+    "flet-embed",
     "flet_route",
     "tortoise",
     "tortoise-orm",
 ]
 
 
-[tool.poetry.dependencies]
-tortoise-orm = "0.21.3"
-flet_route = "0.3.3"
-flet = "0.27.6"
+#[tool.poetry.dependencies]
+#tortoise-orm = "0.21.3"
+#flet_route = "0.3.3"
+#flet = "0.27.6"
 
 [tool.flet]
 org = "com.pavelcode5426" # --org
