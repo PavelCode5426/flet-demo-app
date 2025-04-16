@@ -6,9 +6,11 @@ from flet_route import Params, Basket
 import core as core
 import views as views
 
+indexPage = views.IndexPage()
+
 
 def index_page(page: ft.Page, params: Params, basket: Basket):
-    return views.IndexPage()
+    return indexPage
 
 
 def create_or_update_order_page(page: ft.Page, params: Params, basket: Basket):

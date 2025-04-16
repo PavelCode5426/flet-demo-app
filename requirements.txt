@@ -2,3 +2,4 @@ flet_route
 flet
 sqlalchemy
 py-directus
+python-dotenv

@@ -14,7 +14,7 @@ class IndexPage(ft.View):
         self.controls = [self.container]
 
         self.floating_action_button = ft.FloatingActionButton(icon=ft.icons.ADD, shape=ft.CircleBorder())
-
+        self.navigation_bar.selected_index = 0
         self.__set_current_selection()
 
     def __set_current_selection(self):

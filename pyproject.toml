@@ -1,5 +1,5 @@
 [project]
-name = "Restaurant"
+name = "restaurant"
 version = "0.1.0"
 description = ""
 readme = "README.md"
@@ -8,7 +8,8 @@ dependencies = [
     "flet",
     "flet_route",
     "sqlalchemy",
-    "py-directus"
+    "py-directus",
+    "python-dotenv"
 ]
 
 
@@ -16,13 +17,15 @@ dependencies = [
 org = "com.pavelcode5426" # --org
 product = "Restaurant" # --product
 company = "PavelCode5426" # --company
-copyright = "Copyright (C) 2024 by MyCompany" # --copyright
+copyright = "Copyright (C) 2025 by PavelCode5426" # --copyright
+bundle_id = "com.pavelcode5426.restaurant"
 build_number = 4 # --build-number
 dependencies = [
     "flet",
     "flet_route",
     "sqlalchemy",
-    "py-directus"
+    "py-directus",
+    "python-dotenv"
 ]
 
 [tool.flet.app]

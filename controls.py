@@ -87,8 +87,7 @@ class ReportsContainer(IndexContainer):
         self.content.controls.append(self.content_form)
 
     def render_reports(self):
-        # sells_info = asyncio.run(core.Reports().get_day_info())
-        sells_info = dict()
+        sells_info = core.Reports().get_day_info()
 
         self.content_row.clean()
         grid_controls = self.content_row.controls
@@ -242,6 +241,7 @@ class BillsContainer(AbstractCRUDContainer):
 
 class AbstractCreateOrUpdateForm(ft.Container):
     repository: core.Repository
+    success_url = '/'
 
     def __init__(self, model=None, **kwargs):
         super(AbstractCreateOrUpdateForm, self).__init__(expand=True)
@@ -276,7 +276,7 @@ class AbstractCreateOrUpdateForm(ft.Container):
         else:
             instruction = self.repository.update(model, **columns)
         asyncio.run(instruction)
-        self.page.go('/')
+        self.page.go(self.success_url)
 
     def get_create_or_update_data(self):
         return NotImplemented
