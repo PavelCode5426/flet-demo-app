@@ -67,7 +67,7 @@ jobs:
           overwrite: true
 
   build-iap:
-    runs-on: ubuntu-22.04
+    runs-on: macos-latest
     steps:
       - name: Install System Dependencies
         run: |
